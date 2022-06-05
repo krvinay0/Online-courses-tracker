@@ -1,0 +1,115 @@
+<!--  -->
+<section>
+  <div class="px-5 nav-tabs">
+    <ul class="nav">
+      <li class="nav-item btn">
+        <a
+          class="nav-link fw-bold   {{
+            tabId == 1
+              ? 'text-warning border-0 border-warning border-bottom  border-2'
+              : 'text-primary'
+          }}"
+          aria-current="page"
+          (click)="tabChange(1)"
+          >100% OFF [41]
+        </a>
+      </li>
+      <li class="nav-item btn">
+        <a
+          class="nav-link fw-bold {{
+            tabId == 2
+              ? 'text-warning border-0 border-warning border-bottom  border-2'
+              : 'text-primary'
+          }}"
+          (click)="tabChange(2)"
+          >FREE [20]</a
+        >
+      </li>
+      <li class="nav-item btn">
+        <a
+          class="nav-link fw-bold {{
+            tabId == 3
+              ? 'text-warning border-0 border-warning border-bottom  border-2'
+              : 'text-primary'
+          }}"
+          (click)="tabChange(3)"
+          >DISCOUNT [16]</a
+        >
+      </li>
+      <li class="nav-item btn">
+        <a
+          class="nav-link fw-bold {{
+            tabId == 4
+              ? 'text-warning border-0 border-warning border-bottom  border-2'
+              : 'text-primary'
+          }}"
+          (click)="tabChange(4)"
+          >PAID [9]</a
+        >
+      </li>
+      <li class="nav-item btn">
+        <a
+          class="nav-link fw-bold {{
+            tabId == 5
+              ? 'text-warning border-0 border-warning border-bottom  border-2'
+              : 'text-primary'
+          }}"
+          (click)="tabChange(5)"
+          >EXPIRED [34]</a
+        >
+      </li>
+    </ul>
+    <div class="content">
+      <div
+        class="content-value d-flex justify-content-around align-items-center flex-wrap"
+        *ngIf="tabId === 1"
+      >
+        <ng-container *ngFor="let item of rows">
+          <div class="card m-2 my-sm-4" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="{{ item.URL }}"
+              alt="Card image cap"
+            />
+            <div class="card-body ">
+              <h5 class="card-title text-primary fs-6 pt-2 pb-4 border-bottom">
+                {{ item.courseName }}
+              </h5>
+              <div class="d-flex justify-content-around align-items-center">
+                <div class="text-center text-primary py-2">
+                  <p class="m-0 fw-bold">{{ item.studentsEnrolled }}</p>
+                  <p class="m-0"><small>students</small></p>
+                </div>
+                <div class="text-center text-primary py-2">
+                  <p class="m-0 fw-bold">{{ item.contentLength }}</p>
+                  <p class="m-0"><small>content</small></p>
+                </div>
+                <div class="text-center text-primary py-2">
+                  <p class="m-0 fw-bold">{{ item.lastUpdated }}</p>
+                  <p class="m-0"><small>Update</small></p>
+                </div>
+              </div>
+              <div class="text-center text-warning bg-light mt-3">
+                <p class="m-0">100% OFF</p>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="content-value" *ngIf="tabId === 2">
+        <h5>FREE [20]</h5>
+      </div>
+      <div class="content-value" *ngIf="tabId === 3">
+        <h5 class="">DISCOUNT [16]</h5>
+      </div>
+      <div class="content-value" *ngIf="tabId === 4">
+        <p class="fs-1 fw-bold">PAID [9]</p>
+      </div>
+      <div class="content-value" *ngIf="tabId === 5">
+        <p class="fs-1 fw-bold">EXPIRED [34]</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2"></div>
+</section>
+<!--  -->
